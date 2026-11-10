@@ -4,8 +4,8 @@ name: Hyperdown Check-in
 on:
   workflow_dispatch:
   schedule:
-    # UTC 00:05 ≈ 北京 08:05
-    - cron: "5 7 17 *
+    # UTC 17:00 = 北京 01:00
+    - cron: "0 17 * * *"
 
 permissions:
   contents: read
@@ -15,7 +15,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-
       - uses: actions/setup-python@v6
         with:
           python-version: "3.11"
